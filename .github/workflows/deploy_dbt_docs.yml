@@ -1,5 +1,5 @@
 name: Deploy dbt Docs to GitHub Pages
-
+ 
 on:
   push:
     branches: [master]  # or 'master' or another branch
