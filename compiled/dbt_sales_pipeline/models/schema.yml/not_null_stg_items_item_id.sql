@@ -1,0 +1,11 @@
+
+    
+    
+
+
+
+select item_id
+from SALES_PIPELINE.RAW_staging.stg_items
+where item_id is null
+
+
