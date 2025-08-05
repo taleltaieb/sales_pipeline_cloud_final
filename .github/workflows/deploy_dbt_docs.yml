@@ -2,7 +2,7 @@ name: Deploy dbt Docs to GitHub Pages
 
 on:
   push:
-    branches: [main]  # or 'master' or another branch
+    branches: [master]  # or 'master' or another branch
 
 jobs:
   build-and-deploy:
