@@ -33,8 +33,13 @@ jobs:
           SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
 
+      - name: Disable Jekyll
+        run: touch dbt_sales_pipeline/target/.nojekyll
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dbt_sales_pipeline/target
+          disable_jekyll: true  # Optional but explicit
+
