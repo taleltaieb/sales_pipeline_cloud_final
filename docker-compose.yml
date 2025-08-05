@@ -1,0 +1,84 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+
+  webserver:
+    image: apache/airflow:2.8.1-python3.10
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres/${POSTGRES_DB}
+      AIRFLOW__CORE__FERNET_KEY: ''
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__WEBSERVER__SECRET_KEY: 'mysecret'
+
+      SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD}
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/requirements.txt:/requirements.txt
+    ports:
+      - "8080:8080"
+    command: >
+      bash -c "
+        pip install -r /requirements.txt &&
+        airflow db migrate &&
+        airflow users create --username admin --firstname Talel --lastname Taieb --role Admin --email talel@example.com --password admin &&
+        airflow scheduler & sleep 5 &&
+        exec airflow webserver
+      "
+
+  dbt:
+    image: fishtownanalytics/dbt:1.0.0
+    volumes:
+      - ./dbt_sales_pipeline:/usr/app
+      - ./.dbt:/root/.dbt
+    working_dir: /usr/app
+    env_file:
+      - .env
+    ports:
+      - "8001:8001" 
+    
+    
+
+  dbt-docs:
+    image: fishtownanalytics/dbt:1.0.0
+    entrypoint: ["/bin/bash", "-c"]
+    command: dbt docs generate && dbt docs serve --port 8001 --host 0.0.0.0
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./dbt_sales_pipeline:/usr/app
+      - ./.dbt:/root/.dbt
+    working_dir: /usr/app
+    env_file:
+      - .env
+
+
+
+  streamlit:
+    image: python:3.10
+    container_name: streamlit_app
+    volumes:
+      - ./streamlit_dashboard:/app
+    working_dir: /app
+    ports:
+      - "8501:8501"
+    environment:
+      SNOWFLAKE_USER: ${SNOWFLAKE_USER}
+      SNOWFLAKE_PASSWORD: ${SNOWFLAKE_PASSWORD}
+      SNOWFLAKE_ACCOUNT: ${SNOWFLAKE_ACCOUNT}
+      SNOWFLAKE_DATABASE: ${SNOWFLAKE_DATABASE}
+      SNOWFLAKE_SCHEMA: ${SNOWFLAKE_SCHEMA}
+      SNOWFLAKE_WAREHOUSE: ${SNOWFLAKE_WAREHOUSE}
+    command: bash -c "pip install -r requirements.txt && streamlit run app.py"

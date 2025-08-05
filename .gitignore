@@ -1,0 +1,23 @@
+# Ignore environment + credentials
+.env
+project1-key.pem
+
+# Ignore virtual environments
+venv/
+
+# Ignore Python artifacts
+__pycache__/
+*.pyc
+
+# Ignore DBT profiles/secrets
+.dbt/
+
+# Ignore OS files and editor settings
+.DS_Store
+.idea/
+.vscode/
+
+.dbt/profiles.yml
+
+.venv/
+dbt_sales_pipeline/models/staging/.venv/

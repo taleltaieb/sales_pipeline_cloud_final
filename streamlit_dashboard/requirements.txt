@@ -1,0 +1,8 @@
+streamlit
+snowflake-connector-python
+pandas
+streamlit-aggrid
+plotly
+pyarrow<19.0.0
+python-dotenv
+

@@ -1,0 +1,162 @@
+version: 2
+
+models:
+  - name: mart_daily_sales
+    description: "Aggregated daily sales per shop and item"
+    columns:
+      - name: date
+        description: "Date of the transaction"
+        tests:
+          - not_null
+
+      - name: shop_id
+        description: "Shop identifier"
+        tests:
+          - not_null
+
+      - name: item_id
+        description: "Item identifier"
+        tests:
+          - not_null
+
+      - name: total_item_cnt
+        description: "Total quantity of item sold on this day"
+
+      - name: total_revenue
+        description: "Total revenue for the item on that day"
+
+  - name: mart_monthly_sales
+    description: Monthly revenue and quantity sold by shop/item
+    columns:
+      - name: date_block_num
+        description: Month index (0 = Jan 2013, 33 = Oct 2015)
+        tests:
+          - not_null
+      - name: shop_id
+        tests:
+          - not_null
+      - name: item_id
+        tests:
+          - not_null
+      - name: monthly_revenue
+        description: Total revenue for the item/shop/month
+      - name: monthly_qty_sold
+        description: Total quantity sold
+
+  - name: mart_total_revenue
+    description: "Total revenue computed across all sales"
+    columns:
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: mart_revenue_by_month
+    description: "Monthly revenue over time"
+    columns:
+      - name: date_block_num
+        tests:
+          - not_null
+      - name: monthly_revenue
+        tests:
+          - not_null
+
+  - name: mart_top_shops
+    description: "Total revenue per shop"
+    columns:
+      - name: shop_id
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: mart_top_item_categories
+    description: "Revenue per item category"
+    columns:
+      - name: item_category_id
+        tests:
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: mart_shop_category_matrix
+    description: "Revenue per item category per shop"
+    columns:
+      - name: shop_id
+        tests:
+          - not_null
+      - name: item_category_id
+        tests:
+          - not_null
+
+  - name: mart_shop_profile
+    description: >
+      Summary metrics describing each shop's profile including category diversity,
+      pricing, revenue efficiency, and monthly consistency.
+    columns:
+      - name: SHOP_ID
+        description: Unique identifier for the shop
+        tests:
+          - not_null
+
+      - name: SHOP_NAME
+        description: Human-readable name of the shop
+        tests:
+          - not_null
+
+      - name: CATEGORY_COUNT
+        description: Number of distinct item categories sold by the shop
+        tests:
+          - not_null
+
+      - name: AVG_ITEM_PRICE
+        description: Average item price sold by the shop
+        tests:
+          - not_null
+
+      - name: REVENUE_PER_ITEM
+        description: Average revenue generated per unique item
+        tests:
+          - not_null
+
+      - name: MONTHLY_REVENUE_VARIANCE
+        description: Variance of monthly revenue over time – proxy for sales consistency
+        tests:
+          - not_null
+
+  - name: mart_item_monthly_consistency
+    description: "Monthly revenue trends for top items with consistency insight"
+    columns:
+      - name: DATE_BLOCK_NUM
+        tests:
+          - not_null
+      - name: ITEM_ID
+        tests:
+          - not_null
+      - name: MONTHLY_REVENUE
+        tests:
+          - not_null
+      - name: MONTH_LABEL
+        description: "Human-readable month label (e.g. Jan 2013)"
+      - name: MONTH_DATE
+        description: "Date object version of the month label"
+
+  - name: mart_seasonality_by_category
+    description: "Seasonality index per item category over months"
+    columns:
+      - name: ITEM_CATEGORY_ID
+        tests:
+          - not_null
+      - name: ITEM_CATEGORY_NAME
+        description: Human-readable name of the category
+      - name: MONTH_LABEL
+        description: Month name (Jan–Dec)
+        tests:
+          - not_null
+      - name: MONTH_NUM
+        description: Numeric month (1–12)
+      - name: SEASONALITY_SCORE
+        description: Relative seasonality index per category/month
+        tests:
+          - not_null

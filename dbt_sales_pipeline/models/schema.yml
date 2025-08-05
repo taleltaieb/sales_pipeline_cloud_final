@@ -1,0 +1,65 @@
+version: 2
+
+
+sources:
+  - name: raw
+    schema: RAW
+    database: SALES_PIPELINE
+    tables:
+      - name: sales_train
+      - name: translated_items
+      - name: translated_shops
+      - name: translated_item_categories
+
+models:
+  - name: stg_sales_train
+    description: Staging model for raw sales data.
+    columns:
+      - name: date
+        description: The date of the sale.
+        tests: [not_null]
+      - name: date_block_num
+        description: Time block number for the month.
+        tests: [not_null]
+      - name: shop_id
+        description: Shop identifier.
+        tests: [not_null]
+      - name: item_id
+        description: Item identifier.
+        tests: [not_null]
+      - name: item_price
+        description: Price of the item.
+        tests: [not_null]
+      - name: item_cnt_day
+        description: Quantity of items sold on that day.
+        tests: [not_null]
+
+  - name: stg_items
+    description: Staging model for raw items data.
+    columns:
+      - name: item_id
+        description: Unique identifier for the item.
+        tests: [not_null, unique]
+      - name: item_name
+        description: Name of the item.
+        tests: [not_null]
+
+  - name: stg_shops
+    description: Staging model for raw shops data.
+    columns:
+      - name: shop_id
+        description: Unique identifier for the shop.
+        tests: [not_null, unique]
+      - name: shop_name
+        description: Name of the shop.
+        tests: [not_null]
+
+  - name: stg_item_categories
+    description: Staging model for raw item category data.
+    columns:
+      - name: item_category_id
+        description: Unique identifier for the item category.
+        tests: [not_null, unique]
+      - name: item_category_name
+        description: Name of the item category.
+        tests: [not_null]

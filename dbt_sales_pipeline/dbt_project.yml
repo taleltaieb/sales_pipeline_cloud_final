@@ -1,0 +1,18 @@
+name: 'dbt_sales_pipeline'
+version: '1.0'
+profile: 'sales_pipeline'
+config-version: 2
+
+models:
+  dbt_sales_pipeline:
+    staging:
+      +materialized: view
+      +schema: staging
+      utils:   # 👈 Include this line
+        +materialized: view
+    marts:
+      +materialized: table
+      +schema: marts
+    utils:
+      +materialized: view
+      +schema: staging
