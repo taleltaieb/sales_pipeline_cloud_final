@@ -157,6 +157,63 @@ The diagram below shows all tools, data flow, environments, and layers in detail
 
 ---
 
+## 📘 Lessons Learned
+
+### ✅ What Went Right
+- **End-to-end cloud stack**  
+  Built a fully cloud-native pipeline: S3 → Airflow → Snowflake → dbt → Streamlit.  
+- **Business-first mindset**  
+  Focused on solving real retail challenges (e.g. seasonal demand spikes, shop-level KPIs) rather than “just testing algorithms.”  
+- **Modular, reusable code**  
+  Shared functions, configs and SQL macros across DAGs, dbt models and the Streamlit dashboard.  
+- **Self-hosted, always-on dashboard**  
+  Deployed on AWS EC2 with `systemd` and `nginx`, avoiding downtime or sleep-mode limits of free services.
+
+### 🧩 Challenges & Solutions
+
+1. **Hardcoded Credentials**  
+   - *Issue:* Snowflake password and profiles.yml values were initially in plain text.  
+   - *Fix:* Moved all secrets into a `.env` (gitignored) and load via `os.environ`, ensuring no credentials land in Git.
+
+2. **DAG Failures (S3 & Snowflake Permissions)**  
+   - *Issue:* 403 Forbidden when downloading from S3; permission errors when creating schemas/tables in Snowflake.  
+   - *Fix:*  
+     - Updated S3 bucket policy for public data access.  
+     - Pre-created Snowflake database/schema/role bindings.  
+     - Verified Airflow connections with `dbt debug` and the Airflow UI.
+
+3. **Empty Tables on Load**  
+   - *Issue:* CSVs with special characters/encodings and header misalignment led to zero-row loads.  
+   - *Fix:*  
+     - Explicitly set `FIELD_OPTIONALLY_ENCLOSED_BY='"'`, `SKIP_HEADER=1`, and UTF-8 encoding in the COPY command.  
+     - Added dbt staging tests to assert expected row counts.
+
+4. **Dashboard Persistence & Performance**  
+   - *Issue:* Streamlit apps hosted locally or on free tiers “sleep” after inactivity.  
+   - *Fix:*  
+     - Hosted on an EC2 instance with `systemd` for auto-restart on reboot.  
+     - Front-ended with `nginx` for clean URLs, SSL and firewall control.
+
+5. **Basic Visuals Lacked Depth**  
+   - *Issue:* Initial bar/line charts didn’t tell a complete story.  
+   - *Fix:*  
+     - Added radar charts for multi-KPI shop profiles.  
+     - Built treemaps to show category contributions.  
+     - Created heatmaps for monthly sales consistency and interactive filters for dynamic exploration.
+
+6. **Resource Constraints on EC2**  
+   - *Issue:* Small instance RAM caused slow boots and dbt compile failures.  
+   - *Fix:*  
+     - Upgraded to a `t3.medium` instance.  
+     - Leveraged `@st.cache_data` and limited query sizes to improve responsiveness.
+
+### 💡 Key Takeaways
+- Treat your portfolio projects like production systems: secure, tested, observable and user-focused.  
+- Plan architecture, iterate and validate each step before scaling up.  
+- Critically evaluate every visualization: is it clear, relevant, and driving business insight?  
+
+---
+
 ## 🌐 Live Links
 
 - 📊 [Interactive Streamlit Dashboard](http://16.171.242.247/)
