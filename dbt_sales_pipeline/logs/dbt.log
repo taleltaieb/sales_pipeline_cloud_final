@@ -15231,3 +15231,675 @@ There are 1 unused configuration paths:
 14:10:10.775432 [info ] [MainThread]: 
 14:10:10.776068 [info ] [MainThread]: 
 14:10:10.776756 [info ] [MainThread]: Press Ctrl+C to exit.
+
+
+============================== 2025-08-05 23:54:57.692594 | 09da48a0-4220-411f-9f59-297859cba61c ==============================
+23:54:57.692594 [info ] [MainThread]: Running with dbt=1.0.0
+23:54:57.693726 [debug] [MainThread]: running dbt with arguments Namespace(record_timing_info=None, debug=None, log_format=None, write_json=None, use_colors=None, printer_width=None, warn_error=None, version_check=None, partial_parse=None, single_threaded=False, use_experimental_parser=None, static_parser=None, profiles_dir='/root/.dbt', send_anonymous_usage_stats=None, fail_fast=None, event_buffer_size=None, project_dir=None, profile=None, target=None, vars='{}', log_cache_events=False, compile=True, threads=None, select=None, exclude=None, selector_name=None, state=None, defer=None, cls=<class 'dbt.task.generate.GenerateTask'>, which='generate', rpc_method='docs.generate')
+23:54:57.694411 [debug] [MainThread]: Tracking: tracking
+23:54:57.695101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba90afaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba90afa90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba90afa30>]}
+23:57:23.196627 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 17 files changed.
+23:57:23.198453 [debug] [MainThread]: Partial parsing: update schema file: dbt_sales_pipeline://models/marts/schema.yml
+23:57:23.199303 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_top_shops.sql
+23:57:23.199809 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_seasonality_by_category.sql
+23:57:23.200216 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://macros/date_utils.sql
+23:57:23.200623 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/staging/stg_item_categories.sql
+23:57:23.201017 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/staging/stg_sales_train.sql
+23:57:23.201401 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_daily_sales.sql
+23:57:23.202065 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_total_revenue.sql
+23:57:23.202615 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_item_monthly_consistency.sql
+23:57:23.203272 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/staging/stg_items.sql
+23:57:23.203964 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_shop_profile.sql
+23:57:23.204489 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_monthly_sales.sql
+23:57:23.204959 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/staging/stg_shops.sql
+23:57:23.205359 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_revenue_by_month.sql
+23:57:23.205789 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_shop_category_matrix.sql
+23:57:23.206125 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/utils/base_date.sql
+23:57:23.206469 [debug] [MainThread]: Partial parsing: updated file: dbt_sales_pipeline://models/marts/mart_top_item_categories.sql
+23:57:23.206881 [debug] [MainThread]: Parsing macros/date_utils.sql
+23:57:23.229667 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_top_shops.sql
+23:57:23.256082 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_seasonality_by_category.sql
+23:57:23.258448 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_item_categories.sql
+23:57:23.260412 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_sales_train.sql
+23:57:23.263032 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_daily_sales.sql
+23:57:23.265558 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_total_revenue.sql
+23:57:23.268491 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_item_monthly_consistency.sql
+23:57:23.270923 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_items.sql
+23:57:23.273733 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_shop_profile.sql
+23:57:23.276685 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_monthly_sales.sql
+23:57:23.278813 [debug] [MainThread]: 1699: static parser successfully parsed staging/stg_shops.sql
+23:57:23.281288 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_revenue_by_month.sql
+23:57:23.284277 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_shop_category_matrix.sql
+23:57:23.286290 [debug] [MainThread]: 1699: static parser successfully parsed utils/base_date.sql
+23:57:23.288366 [debug] [MainThread]: 1699: static parser successfully parsed marts/mart_top_item_categories.sql
+23:57:23.417888 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_sales_pipeline.staging.utils
+
+23:57:23.423714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '09da48a0-4220-411f-9f59-297859cba61c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba5e4af40>]}
+23:57:23.466329 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '09da48a0-4220-411f-9f59-297859cba61c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba7f8e3a0>]}
+23:57:23.467016 [info ] [MainThread]: Found 17 models, 42 tests, 0 snapshots, 0 analyses, 180 macros, 0 operations, 0 seed files, 4 sources, 0 exposures, 0 metrics
+23:57:23.470304 [info ] [MainThread]: 
+23:57:23.471311 [debug] [MainThread]: Acquiring new snowflake connection "master"
+23:57:23.473433 [debug] [ThreadPool]: Acquiring new snowflake connection "list_SALES_PIPELINE_RAW_staging"
+23:57:23.482903 [debug] [ThreadPool]: Using snowflake connection "list_SALES_PIPELINE_RAW_staging"
+23:57:23.483778 [debug] [ThreadPool]: On list_SALES_PIPELINE_RAW_staging: /* {"app": "dbt", "dbt_version": "1.0.0", "profile_name": "sales_pipeline", "target_name": "dev", "connection_name": "list_SALES_PIPELINE_RAW_staging"} */
+
+    show terse objects in SALES_PIPELINE.RAW_staging
+23:57:23.484285 [debug] [ThreadPool]: Opening a new connection, currently in state init
+23:57:24.792877 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.31 seconds
+23:57:24.795240 [debug] [ThreadPool]: On list_SALES_PIPELINE_RAW_staging: Close
+23:57:24.862663 [debug] [ThreadPool]: Acquiring new snowflake connection "list_SALES_PIPELINE_RAW_marts"
+23:57:24.864689 [debug] [ThreadPool]: Using snowflake connection "list_SALES_PIPELINE_RAW_marts"
+23:57:24.865116 [debug] [ThreadPool]: On list_SALES_PIPELINE_RAW_marts: /* {"app": "dbt", "dbt_version": "1.0.0", "profile_name": "sales_pipeline", "target_name": "dev", "connection_name": "list_SALES_PIPELINE_RAW_marts"} */
+
+    show terse objects in SALES_PIPELINE.RAW_marts
+23:57:24.865492 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+23:57:25.400483 [debug] [ThreadPool]: SQL status: SUCCESS 12 in 0.53 seconds
+23:57:25.402239 [debug] [ThreadPool]: On list_SALES_PIPELINE_RAW_marts: Close
+23:57:25.469928 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+23:57:25.470825 [info ] [MainThread]: 
+23:57:25.486427 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_monthly_sales
+23:57:25.487234 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_monthly_sales"
+23:57:25.487619 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_monthly_sales
+23:57:25.488197 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_monthly_sales
+23:57:25.489529 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_monthly_sales"
+23:57:25.501293 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.501740 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_monthly_sales
+23:57:25.502315 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.503110 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_monthly_sales
+23:57:25.503613 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_revenue_by_store
+23:57:25.504502 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_revenue_by_store"
+23:57:25.504872 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_revenue_by_store
+23:57:25.505215 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_revenue_by_store
+23:57:25.506193 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_revenue_by_store"
+23:57:25.516124 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.516666 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_revenue_by_store
+23:57:25.517260 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.517932 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_revenue_by_store
+23:57:25.518436 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_top_products
+23:57:25.519071 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_top_products"
+23:57:25.519458 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_top_products
+23:57:25.519812 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_top_products
+23:57:25.520922 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_top_products"
+23:57:25.531429 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.531966 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_top_products
+23:57:25.532481 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.533127 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_top_products
+23:57:25.533672 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.stg_item_categories
+23:57:25.534269 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.stg_item_categories"
+23:57:25.534710 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.stg_item_categories
+23:57:25.535135 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.stg_item_categories
+23:57:25.537238 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.stg_item_categories"
+23:57:25.548024 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.548558 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.stg_item_categories
+23:57:25.548980 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.549620 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.stg_item_categories
+23:57:25.550103 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.stg_items
+23:57:25.551122 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.stg_items"
+23:57:25.551599 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.stg_items
+23:57:25.552018 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.stg_items
+23:57:25.553935 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.stg_items"
+23:57:25.565307 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.565963 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.stg_items
+23:57:25.566512 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.567230 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.stg_items
+23:57:25.567724 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.stg_sales_train
+23:57:25.568532 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.stg_sales_train"
+23:57:25.569047 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.stg_sales_train
+23:57:25.569410 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.stg_sales_train
+23:57:25.571568 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.stg_sales_train"
+23:57:25.583481 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.584072 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.stg_sales_train
+23:57:25.584658 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.585738 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.stg_sales_train
+23:57:25.586491 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.stg_shops
+23:57:25.587473 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.stg_shops"
+23:57:25.587912 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.stg_shops
+23:57:25.588306 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.stg_shops
+23:57:25.590526 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.stg_shops"
+23:57:25.601080 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.601619 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.stg_shops
+23:57:25.602099 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.602821 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.stg_shops
+23:57:25.603371 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562
+23:57:25.604513 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562"
+23:57:25.604980 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562
+23:57:25.605603 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562
+23:57:25.612455 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562"
+23:57:25.624789 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.625275 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562
+23:57:25.625775 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.626391 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_date_block_num.c05d4ef562
+23:57:25.626905 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8
+23:57:25.627479 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8"
+23:57:25.627901 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8
+23:57:25.628245 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8
+23:57:25.631189 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8"
+23:57:25.642079 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.642599 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8
+23:57:25.643225 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.643908 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_item_id.4e105c8eb8
+23:57:25.644494 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a
+23:57:25.645344 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a"
+23:57:25.645803 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a
+23:57:25.646210 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a
+23:57:25.648997 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a"
+23:57:25.659500 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.660168 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a
+23:57:25.660621 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.661214 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_monthly_sales_shop_id.b19f0e419a
+23:57:25.661780 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6
+23:57:25.662340 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6"
+23:57:25.662800 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6
+23:57:25.663203 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6
+23:57:25.666491 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6"
+23:57:25.677765 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.678303 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6
+23:57:25.678820 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.679539 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_id.7a34a016c6
+23:57:25.680088 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8
+23:57:25.680723 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8"
+23:57:25.681128 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8
+23:57:25.681533 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8
+23:57:25.726541 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8"
+23:57:25.738943 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.739494 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8
+23:57:25.740076 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.740820 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_item_categories_item_category_name.b180d231b8
+23:57:25.741362 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96
+23:57:25.741953 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96"
+23:57:25.742430 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96
+23:57:25.742921 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96
+23:57:25.747367 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96"
+23:57:25.758230 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.758876 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96
+23:57:25.759315 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.759939 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.unique_stg_item_categories_item_category_id.93e4d17e96
+23:57:25.760509 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a
+23:57:25.761142 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a"
+23:57:25.761578 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a
+23:57:25.762029 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a
+23:57:25.764906 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a"
+23:57:25.775393 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.775943 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a
+23:57:25.776350 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.777006 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_items_item_id.2983e86e1a
+23:57:25.777526 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85
+23:57:25.778225 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85"
+23:57:25.778663 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85
+23:57:25.779317 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85
+23:57:25.782052 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85"
+23:57:25.792344 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.792926 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85
+23:57:25.793377 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.793963 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_items_item_name.d5044a8c85
+23:57:25.794724 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757
+23:57:25.795355 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757"
+23:57:25.795904 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757
+23:57:25.796346 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757
+23:57:25.799221 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757"
+23:57:25.810001 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.810583 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757
+23:57:25.811092 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.811753 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.unique_stg_items_item_id.20a7a48757
+23:57:25.812215 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.base_date
+23:57:25.812866 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.base_date"
+23:57:25.813353 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.base_date
+23:57:25.813822 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.base_date
+23:57:25.815854 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.base_date"
+23:57:25.826168 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.826836 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.base_date
+23:57:25.827366 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.827999 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.base_date
+23:57:25.828449 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_daily_sales
+23:57:25.828986 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_daily_sales"
+23:57:25.829381 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_daily_sales
+23:57:25.829829 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_daily_sales
+23:57:25.831856 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_daily_sales"
+23:57:25.843090 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.843717 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_daily_sales
+23:57:25.844303 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.844882 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_daily_sales
+23:57:25.845341 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_item_monthly_consistency
+23:57:25.846061 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_item_monthly_consistency"
+23:57:25.846548 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_item_monthly_consistency
+23:57:25.847064 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_item_monthly_consistency
+23:57:25.849549 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_item_monthly_consistency"
+23:57:25.861454 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.862025 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_item_monthly_consistency
+23:57:25.862541 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.863117 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_item_monthly_consistency
+23:57:25.863569 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_revenue_by_month
+23:57:25.864214 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_revenue_by_month"
+23:57:25.864599 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_revenue_by_month
+23:57:25.864946 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_revenue_by_month
+23:57:25.867257 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_revenue_by_month"
+23:57:25.878814 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.879401 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_revenue_by_month
+23:57:25.879909 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.880537 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_revenue_by_month
+23:57:25.881004 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_seasonality_by_category
+23:57:25.881732 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_seasonality_by_category"
+23:57:25.882141 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_seasonality_by_category
+23:57:25.882586 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_seasonality_by_category
+23:57:25.885297 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_seasonality_by_category"
+23:57:25.896749 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.897291 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_seasonality_by_category
+23:57:25.897797 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.898385 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_seasonality_by_category
+23:57:25.899101 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_top_item_categories
+23:57:25.899840 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_top_item_categories"
+23:57:25.900262 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_top_item_categories
+23:57:25.900766 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_top_item_categories
+23:57:25.903366 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_top_item_categories"
+23:57:25.914494 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.915158 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_top_item_categories
+23:57:25.915665 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.916294 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_top_item_categories
+23:57:25.916759 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_total_revenue
+23:57:25.917391 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_total_revenue"
+23:57:25.917810 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_total_revenue
+23:57:25.918355 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_total_revenue
+23:57:25.920234 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_total_revenue"
+23:57:25.930751 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.931351 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_total_revenue
+23:57:25.931839 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.932662 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_total_revenue
+23:57:25.933157 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9
+23:57:25.933865 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9"
+23:57:25.934366 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9
+23:57:25.934872 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9
+23:57:25.938670 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9"
+23:57:25.949550 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.950124 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9
+23:57:25.950585 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.951162 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_date.8dbbe923c9
+23:57:25.951629 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d
+23:57:25.952214 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d"
+23:57:25.952623 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d
+23:57:25.953219 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d
+23:57:25.955972 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d"
+23:57:25.967341 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.967887 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d
+23:57:25.968342 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.968906 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_date_block_num.434ae7f18d
+23:57:25.969353 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7
+23:57:25.969903 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7"
+23:57:25.970358 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7
+23:57:25.970864 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7
+23:57:25.973774 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7"
+23:57:25.984610 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.985200 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7
+23:57:25.985676 [debug] [Thread-1  ]: finished collecting timing info
+23:57:25.986365 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_cnt_day.55e375a5c7
+23:57:25.986845 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8
+23:57:25.987403 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8"
+23:57:25.987883 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8
+23:57:25.988393 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8
+23:57:25.991404 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8"
+23:57:26.002293 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.002932 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8
+23:57:26.003360 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.003958 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_id.85349643d8
+23:57:26.004649 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da
+23:57:26.005246 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da"
+23:57:26.005704 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da
+23:57:26.006149 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da
+23:57:26.009141 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da"
+23:57:26.020627 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.021247 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da
+23:57:26.021731 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.022345 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_item_price.857f5a42da
+23:57:26.022843 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831
+23:57:26.023441 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831"
+23:57:26.023866 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831
+23:57:26.024243 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831
+23:57:26.027133 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831"
+23:57:26.037381 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.037985 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831
+23:57:26.038515 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.039189 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_sales_train_shop_id.9a549f4831
+23:57:26.039976 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_shop_category_matrix
+23:57:26.040890 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_shop_category_matrix"
+23:57:26.041510 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_shop_category_matrix
+23:57:26.041978 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_shop_category_matrix
+23:57:26.044568 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_shop_category_matrix"
+23:57:26.057477 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.058055 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_shop_category_matrix
+23:57:26.058574 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.059211 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_shop_category_matrix
+23:57:26.059839 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_shop_profile
+23:57:26.060644 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_shop_profile"
+23:57:26.061029 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_shop_profile
+23:57:26.061416 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_shop_profile
+23:57:26.063804 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_shop_profile"
+23:57:26.078291 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.078943 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_shop_profile
+23:57:26.079538 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.080473 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_shop_profile
+23:57:26.080993 [debug] [Thread-1  ]: Began running node model.dbt_sales_pipeline.mart_top_shops
+23:57:26.081764 [debug] [Thread-1  ]: Acquiring new snowflake connection "model.dbt_sales_pipeline.mart_top_shops"
+23:57:26.082173 [debug] [Thread-1  ]: Began compiling node model.dbt_sales_pipeline.mart_top_shops
+23:57:26.082598 [debug] [Thread-1  ]: Compiling model.dbt_sales_pipeline.mart_top_shops
+23:57:26.084780 [debug] [Thread-1  ]: Writing injected SQL for node "model.dbt_sales_pipeline.mart_top_shops"
+23:57:26.096427 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.097062 [debug] [Thread-1  ]: Began executing node model.dbt_sales_pipeline.mart_top_shops
+23:57:26.097540 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.098224 [debug] [Thread-1  ]: Finished running node model.dbt_sales_pipeline.mart_top_shops
+23:57:26.098780 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db
+23:57:26.099582 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db"
+23:57:26.099957 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db
+23:57:26.100282 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db
+23:57:26.103138 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db"
+23:57:26.114467 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.115180 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db
+23:57:26.115663 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.116265 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_shops_shop_id.57fba4b2db
+23:57:26.116730 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef
+23:57:26.117283 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef"
+23:57:26.117796 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef
+23:57:26.118319 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef
+23:57:26.121243 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef"
+23:57:26.133823 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.134381 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef
+23:57:26.134842 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.135518 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_stg_shops_shop_name.9a24728aef
+23:57:26.136148 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3
+23:57:26.136740 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3"
+23:57:26.137187 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3
+23:57:26.137724 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3
+23:57:26.140414 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3"
+23:57:26.151343 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.151906 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3
+23:57:26.152416 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.152954 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.unique_stg_shops_shop_id.76719fa9d3
+23:57:26.153410 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861
+23:57:26.154036 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861"
+23:57:26.154391 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861
+23:57:26.154821 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861
+23:57:26.157854 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861"
+23:57:26.171066 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.171602 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861
+23:57:26.172218 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.172960 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_daily_sales_date.1ea3355861
+23:57:26.173614 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f
+23:57:26.174196 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f"
+23:57:26.174619 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f
+23:57:26.175063 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f
+23:57:26.179176 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f"
+23:57:26.191844 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.192398 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f
+23:57:26.192920 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.193477 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_daily_sales_item_id.2d2aa8161f
+23:57:26.193937 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50
+23:57:26.194470 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50"
+23:57:26.194991 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50
+23:57:26.195494 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50
+23:57:26.198450 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50"
+23:57:26.210309 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.210865 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50
+23:57:26.211317 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.211889 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_daily_sales_shop_id.ed61a04c50
+23:57:26.212466 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b
+23:57:26.213064 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b"
+23:57:26.213512 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b
+23:57:26.214002 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b
+23:57:26.216814 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b"
+23:57:26.228338 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.228859 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b
+23:57:26.229272 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.230010 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_DATE_BLOCK_NUM.9fb8715a2b
+23:57:26.230680 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b
+23:57:26.231493 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b"
+23:57:26.231958 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b
+23:57:26.232444 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b
+23:57:26.235384 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b"
+23:57:26.247709 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.248411 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b
+23:57:26.249026 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.249768 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_ITEM_ID.2e7626eb1b
+23:57:26.250242 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5
+23:57:26.250837 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5"
+23:57:26.251251 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5
+23:57:26.251647 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5
+23:57:26.254424 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5"
+23:57:26.268047 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.268630 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5
+23:57:26.269178 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.269802 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_item_monthly_consistency_MONTHLY_REVENUE.4eee86dea5
+23:57:26.270268 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f
+23:57:26.270810 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f"
+23:57:26.271338 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f
+23:57:26.271764 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f
+23:57:26.274874 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f"
+23:57:26.286053 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.286637 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f
+23:57:26.287094 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.287724 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_date_block_num.dc35a0bd5f
+23:57:26.288247 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b
+23:57:26.288964 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b"
+23:57:26.289598 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b
+23:57:26.290125 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b
+23:57:26.292955 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b"
+23:57:26.304209 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.304924 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b
+23:57:26.305409 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.306030 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_revenue_by_month_monthly_revenue.7b84e90f1b
+23:57:26.306687 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028
+23:57:26.307291 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028"
+23:57:26.307804 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028
+23:57:26.308207 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028
+23:57:26.310932 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028"
+23:57:26.322012 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.322578 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028
+23:57:26.323071 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.323697 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_ITEM_CATEGORY_ID.22ce74e028
+23:57:26.324252 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d
+23:57:26.324879 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d"
+23:57:26.325372 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d
+23:57:26.325794 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d
+23:57:26.328491 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d"
+23:57:26.340103 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.340669 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d
+23:57:26.341151 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.341950 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_MONTH_LABEL.6313d2983d
+23:57:26.342517 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3
+23:57:26.343092 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3"
+23:57:26.343514 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3
+23:57:26.344030 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3
+23:57:26.346728 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3"
+23:57:26.357631 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.358150 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3
+23:57:26.358648 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.359429 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_seasonality_by_category_SEASONALITY_SCORE.e8ab9ef0f3
+23:57:26.359975 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb
+23:57:26.360656 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb"
+23:57:26.361133 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb
+23:57:26.361718 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb
+23:57:26.364477 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb"
+23:57:26.376073 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.376553 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb
+23:57:26.377178 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.377821 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_top_item_categories_item_category_id.662c4872fb
+23:57:26.378292 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765
+23:57:26.378943 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765"
+23:57:26.379448 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765
+23:57:26.380028 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765
+23:57:26.382946 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765"
+23:57:26.394179 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.395145 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765
+23:57:26.395725 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.396403 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_top_item_categories_total_revenue.2e4999a765
+23:57:26.396891 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6
+23:57:26.397438 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6"
+23:57:26.397808 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6
+23:57:26.398187 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6
+23:57:26.402316 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6"
+23:57:26.414150 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.414728 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6
+23:57:26.415253 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.415802 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_total_revenue_total_revenue.207dd0bbe6
+23:57:26.416286 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39
+23:57:26.416852 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39"
+23:57:26.417372 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39
+23:57:26.417893 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39
+23:57:26.421531 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39"
+23:57:26.432890 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.433420 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39
+23:57:26.433884 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.434485 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_item_category_id.d23ca9fa39
+23:57:26.434959 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575
+23:57:26.435650 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575"
+23:57:26.436061 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575
+23:57:26.436450 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575
+23:57:26.439408 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575"
+23:57:26.450725 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.451344 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575
+23:57:26.451855 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.452486 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_category_matrix_shop_id.9e4e4a7575
+23:57:26.453102 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798
+23:57:26.453723 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798"
+23:57:26.454137 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798
+23:57:26.454526 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798
+23:57:26.457316 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798"
+23:57:26.468541 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.469256 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798
+23:57:26.469794 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.470511 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_AVG_ITEM_PRICE.31d48e1798
+23:57:26.471083 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4
+23:57:26.471764 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4"
+23:57:26.472342 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4
+23:57:26.472777 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4
+23:57:26.476812 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4"
+23:57:26.490112 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.490857 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4
+23:57:26.491551 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.492466 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_CATEGORY_COUNT.95636ac9d4
+23:57:26.493152 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607
+23:57:26.493831 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607"
+23:57:26.494333 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607
+23:57:26.494871 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607
+23:57:26.497892 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607"
+23:57:26.510762 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.511383 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607
+23:57:26.512030 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.512720 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_MONTHLY_REVENUE_VARIANCE.4c34fb1607
+23:57:26.513806 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b
+23:57:26.514606 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b"
+23:57:26.515201 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b
+23:57:26.515838 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b
+23:57:26.518986 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b"
+23:57:26.531513 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.532198 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b
+23:57:26.532691 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.533300 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_REVENUE_PER_ITEM.50dcd3500b
+23:57:26.533760 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6
+23:57:26.534402 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6"
+23:57:26.534929 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6
+23:57:26.535553 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6
+23:57:26.538501 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6"
+23:57:26.550630 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.551221 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6
+23:57:26.551645 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.552249 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_ID.2a57daace6
+23:57:26.552816 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f
+23:57:26.553421 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f"
+23:57:26.554035 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f
+23:57:26.554497 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f
+23:57:26.557187 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f"
+23:57:26.570801 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.571453 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f
+23:57:26.571988 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.572769 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_shop_profile_SHOP_NAME.ffad43b95f
+23:57:26.573391 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83
+23:57:26.574068 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83"
+23:57:26.574514 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83
+23:57:26.574921 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83
+23:57:26.577660 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83"
+23:57:26.589738 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.590334 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83
+23:57:26.590840 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.591578 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_top_shops_shop_id.5f28a1ac83
+23:57:26.592152 [debug] [Thread-1  ]: Began running node test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001
+23:57:26.592851 [debug] [Thread-1  ]: Acquiring new snowflake connection "test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001"
+23:57:26.593324 [debug] [Thread-1  ]: Began compiling node test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001
+23:57:26.593792 [debug] [Thread-1  ]: Compiling test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001
+23:57:26.596751 [debug] [Thread-1  ]: Writing injected SQL for node "test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001"
+23:57:26.609470 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.609976 [debug] [Thread-1  ]: Began executing node test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001
+23:57:26.610468 [debug] [Thread-1  ]: finished collecting timing info
+23:57:26.611012 [debug] [Thread-1  ]: Finished running node test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001
+23:57:26.612574 [debug] [MainThread]: Connection 'master' was properly closed.
+23:57:26.613206 [debug] [MainThread]: Connection 'test.dbt_sales_pipeline.not_null_mart_top_shops_total_revenue.8061af0001' was properly closed.
+23:57:26.638263 [info ] [MainThread]: Done.
+23:57:26.855231 [debug] [MainThread]: Acquiring new snowflake connection "generate_catalog"
+23:57:26.855762 [info ] [MainThread]: Building catalog
+23:57:26.858955 [debug] [ThreadPool]: Acquiring new snowflake connection "SALES_PIPELINE.information_schema"
+23:57:26.864656 [debug] [ThreadPool]: Using snowflake connection "SALES_PIPELINE.information_schema"
+23:57:26.865534 [debug] [ThreadPool]: On SALES_PIPELINE.information_schema: /* {"app": "dbt", "dbt_version": "1.0.0", "profile_name": "sales_pipeline", "target_name": "dev", "connection_name": "SALES_PIPELINE.information_schema"} */
+
+    
+      with tables as (
+
+          select
+              table_catalog as "table_database",
+              table_schema as "table_schema",
+              table_name as "table_name",
+              table_type as "table_type",
+              comment as "table_comment",
+
+              -- note: this is the _role_ that owns the table
+              table_owner as "table_owner",
+
+              'Clustering Key' as "stats:clustering_key:label",
+              clustering_key as "stats:clustering_key:value",
+              'The key used to cluster this table' as "stats:clustering_key:description",
+              (clustering_key is not null) as "stats:clustering_key:include",
+
+              'Row Count' as "stats:row_count:label",
+              row_count as "stats:row_count:value",
+              'An approximate count of rows in this table' as "stats:row_count:description",
+              (row_count is not null) as "stats:row_count:include",
+
+              'Approximate Size' as "stats:bytes:label",
+              bytes as "stats:bytes:value",
+              'Approximate size of the table as reported by Snowflake' as "stats:bytes:description",
+              (bytes is not null) as "stats:bytes:include",
+
+              'Last Modified' as "stats:last_modified:label",
+              to_varchar(convert_timezone('UTC', last_altered), 'yyyy-mm-dd HH24:MI'||'UTC') as "stats:last_modified:value",
+              'The timestamp for last update/change' as "stats:last_modified:description",
+              (last_altered is not null and table_type='BASE TABLE') as "stats:last_modified:include"
+
+          from SALES_PIPELINE.INFORMATION_SCHEMA.tables
+
+      ),
+
+      columns as (
+
+          select
+              table_catalog as "table_database",
+              table_schema as "table_schema",
+              table_name as "table_name",
+
+              column_name as "column_name",
+              ordinal_position as "column_index",
+              data_type as "column_type",
+              comment as "column_comment"
+
+          from SALES_PIPELINE.INFORMATION_SCHEMA.columns
+      )
+
+      select *
+      from tables
+      join columns using ("table_database", "table_schema", "table_name")
+      where (upper("table_schema") = upper('raw') or upper("table_schema") = upper('raw_marts') or upper("table_schema") = upper('raw_staging'))
+      order by "column_index"
+23:57:26.866138 [debug] [ThreadPool]: Opening a new connection, currently in state init
+23:57:29.375559 [debug] [ThreadPool]: SQL status: SUCCESS 81 in 2.51 seconds
+23:57:29.407703 [debug] [ThreadPool]: On SALES_PIPELINE.information_schema: Close
+23:57:29.503468 [info ] [MainThread]: Catalog written to /usr/app/target/catalog.json
+23:57:29.504537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba7f11670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72ebaf36ff10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x72eba5dee550>]}
+23:57:29.924776 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+23:57:29.926091 [debug] [MainThread]: Connection 'SALES_PIPELINE.information_schema' was properly closed.
