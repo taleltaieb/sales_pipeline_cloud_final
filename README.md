@@ -1,4 +1,4 @@
-# Sales Performance Analytics Dashboard
+# 5-Step Pipeline to Surface 4 Key Retail KPIs  
 
 A full-stack cloud analytics project that tracks sales performance across multiple stores and item categories using a real-world dataset. This project demonstrates cloud data engineering, data modeling, and advanced business intelligence capabilities.
 
