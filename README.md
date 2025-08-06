@@ -141,7 +141,13 @@ project/
 
 ---
 
-## 🧠 Skills Demonstrated
+## 🧠 Technical Flow
+
+The diagram below shows all tools, data flow, environments, and layers in detail:
+
+![Full Technical Diagram](diagram2.png)
+
+
 
 * Data Engineering: Airflow, Snowflake, S3
 * Data Modeling: dbt, SQL testing, normalization
