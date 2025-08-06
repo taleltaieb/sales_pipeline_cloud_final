@@ -4,6 +4,13 @@ A full-stack cloud analytics project that tracks sales performance across multip
 
 ---
 
+## 🔗 Demo
+
+**Video demo:**  
+![Demo of dashboard](Animation.gif)
+
+---
+
 ## 🚀 Overview
 
 **Goal:** Build an end-to-end cloud analytics pipeline to analyze and visualize retail sales data using a modern data stack.
@@ -137,13 +144,11 @@ project/
 
 ---
 
-## 🔗 Demo
+## 🌐 Live Links
 
-**App:** [http://16.171.242.247/](http://16.171.242.247/)
-
-**Video demo:**  
-![Demo of dashboard](Animation.gif)
-
+- 📊 [Interactive Streamlit Dashboard](http://16.171.242.247/)
+- 📘 [dbt Documentation](https://taleltaieb.github.io/sales_pipeline_cloud_final/#!/overview)
+- 📂 [GitHub Repository](https://github.com/taleltaieb/sales_pipeline_cloud_final)
 
 ---
 
