@@ -145,7 +145,7 @@ project/
 
 The diagram below shows all tools, data flow, environments, and layers in detail:
 
-![Full Technical Diagram](diagram2.png)
+![Full Technical Diagram](diagram2.jpg)
 
 
 
