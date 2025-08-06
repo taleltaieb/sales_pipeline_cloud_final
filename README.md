@@ -22,7 +22,7 @@ A full-stack cloud analytics project that tracks sales performance across multip
 **Pipeline Stack:**
 This is a high-level view of the cloud analytics pipeline:
 
-![Simple Architecture Diagram](diagram.jpg)
+![Simple Architecture Diagram](diagram1.jpg)
 
 
 
