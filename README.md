@@ -15,9 +15,16 @@ A full-stack cloud analytics project that tracks sales performance across multip
 
 **Goal:** Build an end-to-end cloud analytics pipeline to analyze and visualize retail sales data using a modern data stack.
 
-**Pipeline Stack:**
+---
 
-![Diagram](diagram.jpg)
+
+## 🧱 Architecture Overview
+**Pipeline Stack:**
+This is a high-level view of the cloud analytics pipeline:
+
+![Simple Architecture Diagram](diagram.jpg)
+
+
 
 ---
 
