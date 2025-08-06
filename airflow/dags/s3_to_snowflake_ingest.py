@@ -60,9 +60,9 @@ def load_csv_to_snowflake(s3_filename, table_name, table_schema):
 
     # Connect to Snowflake
     conn = snowflake.connector.connect(
-        user='talel',
-        password=os.environ['SNOWFLAKE_PASSWORD'],
-        account='POVMATA-IZ40650',
+        user=os.getenv('SNOWFLAKE_USER'),
+        password=os.getenv('SNOWFLAKE_PASSWORD'),
+        account=os.getenv('SNOWFLAKE_ACCOUNT'),
         warehouse='COMPUTE_WH',
         database='SALES_PIPELINE',
         schema='RAW',
